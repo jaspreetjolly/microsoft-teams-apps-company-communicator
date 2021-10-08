@@ -210,9 +210,9 @@ class NewMessage extends React.Component<INewMessageProps, formState> {
         const file = this.fileInput.current.files[0];
         if (file) { //if we have a file
             //resize the image to fit in the adaptivecard
-            Resizer.imageFileResizer(file, 400, 400, 'JPEG', 80, 0,
+            Resizer.imageFileResizer(file, 1400, 1400, 'JPEG', 180, 0,
                 uri => {
-                    if (uri.toString().length < 32768) {
+                    if (uri.toString().length < 327680) {
                         //everything is ok with the image, lets set it on the card and update
                         setCardImageLink(this.card, uri.toString());
                         this.updateCard();
